@@ -19,7 +19,7 @@ func main() {
 		"Kies 3 voor Planeten\n" +
 		"Kies 4 voor Initialenmaker\n" +
 		"\n" +
-		"Oefeningen:\n"
+		"Oefeningen:"
 	fmt.Println(menu)
 
 	fmt.Scanln(&optie)
