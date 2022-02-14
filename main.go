@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/TijsManders/goprojecten/HelloWorld"
 )
 
 func main() {
@@ -20,6 +22,6 @@ func main() {
 		fmt.Println("Je hebt niet voor een valide optie gekozen")
 
 	case "1":
-
+		HelloWorld.HelloWorld()
 	}
 }
