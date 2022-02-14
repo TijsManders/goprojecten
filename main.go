@@ -31,5 +31,8 @@ func main() {
 
 	case "3":
 		Planeten.Snelheid()
+
+	case "4":
+		initialenmaker.initialen()
 	}
 }
