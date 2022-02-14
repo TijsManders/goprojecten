@@ -1,3 +1,3 @@
-module /Vrije_oefenopdrachten/Alarm
+module github.com/TijsManders/goprojecten/Alarm
 
 go 1.17
