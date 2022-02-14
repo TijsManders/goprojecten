@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func Alarm() {
 	var AantalAlarm int
 
 	fmt.Println("Hoe vaak moet het alarm af gaan?")

@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 
+	"github.com/TijsManders/goprojecten/Alarm"
 	"github.com/TijsManders/goprojecten/HelloWorld"
+	"github.com/TijsManders/goprojecten/Planeten"
 )
 
 func main() {
@@ -23,5 +25,11 @@ func main() {
 
 	case "1":
 		HelloWorld.HelloWorld()
+
+	case "2":
+		Alarm.Alarm()
+
+	case "3":
+		Planeten.Snelheid()
 	}
 }
