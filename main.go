@@ -5,6 +5,7 @@ import (
 
 	"github.com/TijsManders/goprojecten/Alarm"
 	"github.com/TijsManders/goprojecten/HelloWorld"
+	"github.com/TijsManders/goprojecten/Initialenmaker"
 	"github.com/TijsManders/goprojecten/Planeten"
 )
 
@@ -12,9 +13,13 @@ func main() {
 
 	var optie string
 
-	const menu = "Kies 1 voor Hello World \n" +
+	const menu = "Vrije Oefenopdrachten:\n" +
+		"Kies 1 voor Hello World \n" +
 		"Kies 2 voor Alarm\n" +
-		"Kies 3 voor Planeten\n"
+		"Kies 3 voor Planeten\n" +
+		"Kies 4 voor Initialenmaker\n" +
+		"\n" +
+		"Oefeningen:\n"
 	fmt.Println(menu)
 
 	fmt.Scanln(&optie)
@@ -33,6 +38,6 @@ func main() {
 		Planeten.Snelheid()
 
 	case "4":
-		initialenmaker.initialen()
+		Initialenmaker.Initialen()
 	}
 }

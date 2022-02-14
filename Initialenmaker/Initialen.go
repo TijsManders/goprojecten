@@ -1,11 +1,21 @@
-package initialenmaker
+package Initialenmaker
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
-func initialen() {
+var Naam string
+
+func Initialen() {
 
 	fmt.Println("Vul hier je volledige naam in")
-	var naam string
-	fmt.Scan(&naam)
-
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	Naam = scanner.Text()
+	Namen := strings.Split(Naam, " ")
+	fmt.Println(Namen[0])
+	fmt.Println(Namen[1])
 }
