@@ -3,45 +3,53 @@ package Hoogbouw
 import (
 	"bufio"
 	"fmt"
-	"math"
+	"log"
 	"os"
+	"strconv"
 )
 
 func Hoogteverschil() {
-	// Geef 3 gebouwen met hoogtes op
-	fmt.Println("Wat is de naam van het eerste gebouw?")
-	// bufio.newscanner is maar 1 keer nodig?
+	Gebouwen := []Gebouw{}
+
+	fmt.Println("Hoeveel gebouwen Wil je toevoegen?")
 	input := bufio.NewScanner(os.Stdin)
 	input.Scan()
-	NaamGebouw1 := input.Text()
-	fmt.Println("Wat is de hoogte van", NaamGebouw1, "in meters?")
-	input.Scan()
-	HoogteGebouw1 := input.Text()
+	HoeveelGebouwen, err := strconv.Atoi(input.Text())
 
-	fmt.Println("Wat is de naam van het tweede gebouw?")
-	input.Scan()
-	NaamGebouw2 := input.Text()
-	fmt.Println("Wat is de hoogte van", NaamGebouw2, "in meters?")
-	input.Scan()
-	HoogteGebouw2 := input.Text()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	fmt.Println("Wat is de naam van het derde gebouw?")
-	input.Scan()
-	NaamGebouw3 := input.Text()
-	fmt.Println("Wat is de hoogte van", NaamGebouw3, "in meters?")
-	input.Scan()
-	HoogteGebouw3 := input.Text()
+	for i := 0; i < HoeveelGebouwen; i++ {
+		fmt.Println("Wat is de naam van gebouw", i+1, "?")
+		input.Scan()
+		NaamGebouw := input.Text()
+		fmt.Println("Wat is de hoogte van", NaamGebouw, "in meters?")
+		input.Scan()
+		HoogteGebouw, err := strconv.Atoi(input.Text())
+		if err != nil {
+			log.Fatal(err)
+		}
+		NieuwGebouw := Gebouw{
+			Naam:   NaamGebouw,
+			Hoogte: HoogteGebouw,
+		}
+		Gebouwen = append(Gebouwen, NieuwGebouw)
+	}
+	for _, Info := range Gebouwen {
+		fmt.Println("Gebouw", Info.Naam, "is", Info.Hoogte, "meter hoog.")
+	}
 
-	fmt.Println("De namen van de eerste 3 gebouwen zijn:", NaamGebouw1, NaamGebouw2, NaamGebouw3, "En de hoogte hiervan zijn:", HoogteGebouw1, HoogteGebouw2, HoogteGebouw3)
+}
 
-	//fmt.Println("Wil je nog meer gebouwen toevoegen?")
+// Rekensom
+// sort.splice onderzoeken
 
-	// Rekensom
-	Hoogste1 := math.Max(HoogteGebouw1, HoogteGebouw2, HoogteGebouw3)
+//fmt.Println(Hoogste1, "is het hoogst, het is ", Verschil1, "meter hoger dan", Hoogste2, "en ", Verschil2, "meter hoger dan ", Hoogste3, ".")
 
-	fmt.Println(Hoogste1)
+// Uitslag wegschrijven naar tekstbestand
 
-	//fmt.Println(Hoogste1, "is het hoogst, het is ", Verschil1, "meter hoger dan", Hoogste2, "en ", Verschil2, "meter hoger dan ", Hoogste3, ".")
-
-	// Uitslag wegschrijven naar tekstbestand
+type Gebouw struct {
+	Naam   string
+	Hoogte int
 }
