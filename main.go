@@ -5,6 +5,7 @@ import (
 
 	"github.com/TijsManders/goprojecten/Alarm"
 	"github.com/TijsManders/goprojecten/HelloWorld"
+	"github.com/TijsManders/goprojecten/Hoogbouw"
 	"github.com/TijsManders/goprojecten/Initialenmaker"
 	"github.com/TijsManders/goprojecten/Planeten"
 )
@@ -18,6 +19,7 @@ func main() {
 		"Kies 2 voor Alarm\n" +
 		"Kies 3 voor Planeten\n" +
 		"Kies 4 voor Initialenmaker\n" +
+		"Kies 5 voor Hoogbouw\n" +
 		"\n" +
 		"Oefeningen:"
 	fmt.Println(menu)
@@ -39,5 +41,8 @@ func main() {
 
 	case "4":
 		Initialenmaker.Initialen()
+
+	case "5":
+		Hoogbouw.Hoogteverschil()
 	}
 }
