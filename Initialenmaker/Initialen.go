@@ -16,8 +16,8 @@ func Initialen() {
 	Naam := input.Text()
 	Namen := strings.Split(Afkorten(Naam), " ")
 
-	for index := range Namen {
-		Letter := Namen[index][0:1]
+	for _, naam := range Namen {
+		Letter := naam[0:1]
 		fmt.Print(strings.ToUpper(Letter) + ".")
 	}
 }
