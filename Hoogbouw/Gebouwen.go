@@ -3,6 +3,7 @@ package Hoogbouw
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 )
 
@@ -36,6 +37,11 @@ func Hoogteverschil() {
 	//fmt.Println("Wil je nog meer gebouwen toevoegen?")
 
 	// Rekensom
+	Hoogste1 := math.Max(HoogteGebouw1, HoogteGebouw2, HoogteGebouw3)
+
+	fmt.Println(Hoogste1)
+
+	//fmt.Println(Hoogste1, "is het hoogst, het is ", Verschil1, "meter hoger dan", Hoogste2, "en ", Verschil2, "meter hoger dan ", Hoogste3, ".")
 
 	// Uitslag wegschrijven naar tekstbestand
 }
